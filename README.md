@@ -1,7 +1,7 @@
 # ⚡ Chaniathon – Electronics Hackathon @ HMU Chania
 
 ## 📍 Overview
-Chaniathon is a hackathon hosted at the **Department of Electrical & Electronic Engineering, HMU Chania**, designed for students to build **smart electronic prototypes** in a short time.
+Chaniathon is a hackathon hosted at the **Department of Electronic Engineering, HMU Chania**, designed for students to build **smart electronic prototypes** in a short time.
 
 The event is open to **all Greek university students**, and aims to:
 - Foster creativity and teamwork.
