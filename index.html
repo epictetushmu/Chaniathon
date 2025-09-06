@@ -81,6 +81,11 @@ color: #00ffff;
 clip: rect(0, 900px, 0, 0);
 animation: glitch-anim2 5s infinite linear alternate-reverse;
 }
+
+details[open] > summary i {
+  transform: rotate(180deg);
+}
+
 @keyframes glitch-anim {
 0% { clip: rect(42px, 9999px, 44px, 0); }
 5% { clip: rect(24px, 9999px, 58px, 0); }
@@ -890,78 +895,78 @@ Submit Your Project Idea
 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-700 mx-auto rounded-full mt-4"></div>
 </div>
 <div class="space-y-4 max-w-3xl mx-auto">
-<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
-<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<details class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<summary class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center cursor-pointer">
 <span class="font-medium text-gray-800">Who can participate in Chaniathon?</span>
-<i class="fas fa-chevron-down text-gray-500"></i>
-</button>
+<i class="fas fa-chevron-down text-gray-500 transform transition-transform"></i>
+</summary>
 <div class="p-6 bg-white">
 <p class="text-gray-600 leading-relaxed">Chaniathon is open to all undergraduate and graduate students currently enrolled in Greek universities. Students from any discipline are welcome, though backgrounds in engineering, computer science, or related fields are beneficial. Teams must consist of 3-5 members.</p>
 </div>
-</div>
-<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
-<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+</details>
+<details class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<summary class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center cursor-pointer">
 <span class="font-medium text-gray-800">Do I need prior experience with electronics?</span>
-<i class="fas fa-chevron-down text-gray-500"></i>
-</button>
+<i class="fas fa-chevron-down text-gray-500 transform transition-transform"></i>
+</summary>
 <div class="p-6 bg-white">
 <p class="text-gray-600 leading-relaxed">No prior experience is required! Chaniathon is designed to be accessible to students of all skill levels. We provide resources, tutorials, and mentorship to help teams succeed. What's most important is your enthusiasm, creativity, and willingness to learn.</p>
 </div>
-</div>
-<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
-<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+</details>
+<details class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<summary class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center cursor-pointer">
 <span class="font-medium text-gray-800">What tools will we use for the virtual phase?</span>
-<i class="fas fa-chevron-down text-gray-500"></i>
-</button>
+<i class="fas fa-chevron-down text-gray-500 transform transition-transform"></i>
+</summary>
 <div class="p-6 bg-white">
 <p class="text-gray-600 leading-relaxed">For Phase 1 (Virtual Prototyping), teams will use Wokwi, a browser-based simulator for Arduino, ESP32, and other microcontrollers. Wokwi allows you to build circuits and write code without any physical hardware. It's completely free to use and requires only a web browser.</p>
 </div>
-</div>
-<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
-<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+</details>
+<details class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<summary class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center cursor-pointer">
 <span class="font-medium text-gray-800">What happens in the hardware phase?</span>
-<i class="fas fa-chevron-down text-gray-500"></i>
-</button>
+<i class="fas fa-chevron-down text-gray-500 transform transition-transform"></i>
+</summary>
 <div class="p-6 bg-white">
 <p class="text-gray-600 leading-relaxed">The top-scoring teams from Phase 1 will advance to Phase 2 (Hardware Prototyping). These teams will receive electronics kits and access to HMU's laboratories to build physical versions of their projects. Mentors will be available to assist with hardware implementation and troubleshooting.</p>
 </div>
-</div>
-<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
-<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+</details>
+<details class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<summary class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center cursor-pointer">
 <span class="font-medium text-gray-800">What resources will be provided?</span>
-<i class="fas fa-chevron-down text-gray-500"></i>
-</button>
+<i class="fas fa-chevron-down text-gray-500 transform transition-transform"></i>
+</summary>
 <div class="p-6 bg-white">
 <p class="text-gray-600 leading-relaxed">All teams will have access to online documentation, tutorials, and mentorship. Advancing teams in Phase 2 will receive electronics kits containing components needed for their projects, as well as access to HMU's laboratories with tools and equipment. Basic components like resistors, LEDs, sensors, and microcontrollers will be provided.</p>
 </div>
-</div>
-<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
-<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+</details>
+<details class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<summary class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center cursor-pointer">
 <span class="font-medium text-gray-800">How are teams judged?</span>
-<i class="fas fa-chevron-down text-gray-500"></i>
-</button>
+<i class="fas fa-chevron-down text-gray-500 transform transition-transform"></i>
+</summary>
 <div class="p-6 bg-white">
 <p class="text-gray-600 leading-relaxed">Projects are evaluated on a 100-point scale across five categories: Functionality (30 points), Innovation (20 points), Complexity (15 points), Presentation (15 points), and Hardware Implementation (20 points). Judges are looking for working prototypes that solve real problems in creative ways with clean implementation and clear communication.</p>
 </div>
-</div>
-<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
-<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+</details>
+<details class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<summary class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center cursor-pointer">
 <span class="font-medium text-gray-800">Can I participate if I can't attend in person?</span>
-<i class="fas fa-chevron-down text-gray-500"></i>
-</button>
+<i class="fas fa-chevron-down text-gray-500 transform transition-transform"></i>
+</summary>
 <div class="p-6 bg-white">
 <p class="text-gray-600 leading-relaxed">Phase 1 (Virtual Prototyping) can be completed entirely online. However, Phase 2 (Hardware Prototyping) requires physical presence at HMU Chania to build and test your hardware. If you cannot attend in person, you can still participate in Phase 1 and gain valuable experience, but you won't be able to advance to the hardware phase.</p>
 </div>
-</div>
-<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
-<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+</details>
+<details class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<summary class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center cursor-pointer">
 <span class="font-medium text-gray-800">How do I form a team?</span>
-<i class="fas fa-chevron-down text-gray-500"></i>
-</button>
+<i class="fas fa-chevron-down text-gray-500 transform transition-transform"></i>
+</summary>
 <div class="p-6 bg-white">
 <p class="text-gray-600 leading-relaxed">You can form a team with classmates or friends, or use our team-matching system when you register. We encourage interdisciplinary teams with diverse skills (hardware, coding, design, documentation). Each team must have 3-5 members, and all members must register individually while indicating their team affiliation.</p>
 </div>
-</div>
+</details>
 </div>
 </div>
 </section>
@@ -1181,7 +1186,7 @@ navLink.classList.add('active-nav');
 
 // Countdown timer
 function updateCountdown() {
-const eventDate = new Date('June 1, 2024 00:00:00').getTime();
+const eventDate = new Date('June 1, 202 00:00:00').getTime();
 const now = new Date().getTime();
 const distance = eventDate - now;
 
@@ -1199,23 +1204,6 @@ document.getElementById('seconds').textContent = seconds.toString().padStart(2, 
 // Initialize countdown
 updateCountdown();
 setInterval(updateCountdown, 1000);
-
-// FAQ accordion
-document.querySelectorAll('.faq-item button').forEach(button => {
-button.addEventListener('click', () => {
-const faqItem = button.closest('.faq-item');
-faqItem.classList.toggle('active');
-
-const icon = button.querySelector('i');
-if (faqItem.classList.contains('active')) {
-icon.classList.remove('fa-chevron-down');
-icon.classList.add('fa-chevron-up');
-} else {
-icon.classList.remove('fa-chevron-up');
-icon.classList.add('fa-chevron-down');
-}
-});
-});
 
 // Binary rain effect
 function createBinaryRain() {
@@ -1244,28 +1232,18 @@ binaryRain.appendChild(column);
 // Initialize binary rain
 createBinaryRain();
 
-// FAQ accordion improvements
-document.querySelectorAll('.faq-item').forEach(item => {
-const button = item.querySelector('button');
-button.addEventListener('click', () => {
-const isActive = item.classList.contains('active');
-
-// Close all items first
-document.querySelectorAll('.faq-item').forEach(i => {
-i.classList.remove('active');
-const icon = i.querySelector('i');
-icon.classList.remove('fa-chevron-up');
-icon.classList.add('fa-chevron-down');
-});
-
-// Open clicked item if it wasn't active
-if (!isActive) {
-item.classList.add('active');
-const icon = button.querySelector('i');
-icon.classList.remove('fa-chevron-down');
-icon.classList.add('fa-chevron-up');
-}
-});
+// Add a class to the icon when the details element is open
+document.querySelectorAll('details').forEach((detail) => {
+  detail.addEventListener('toggle', () => {
+    const icon = detail.querySelector('i');
+    if (detail.open) {
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-up');
+    } else {
+      icon.classList.remove('fa-chevron-up');
+      icon.classList.add('fa-chevron-down');
+    }
+  });
 });
 </script></body>
 </html>
