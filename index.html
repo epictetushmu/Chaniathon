@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaniathon - Electronics Hackathon @ HMU Chania</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-image:
+radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 20%),
+radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.03) 0%, transparent 20%);
+}
+.gradient-text {
+background: linear-gradient(90deg, #2563eb 0%, #4f46e5 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.neon-text {
+text-shadow: 0 0 5px rgba(37, 99, 235, 0.7), 0 0 10px rgba(37, 99, 235, 0.5);
+}
+.hackathon-glow {
+box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+transition: box-shadow 0.3s ease;
+}
+.hackathon-glow:hover {
+box-shadow: 0 0 25px rgba(37, 99, 235, 0.6);
+}
+.terminal-text::after {
+content: "|";
+animation: blink 1s infinite;
+margin-left: 2px;
+color: #2563eb;
+}
+@keyframes blink {
+50% { opacity: 0; }
+}
+.circuit-bg {
+background-image:
+url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 3c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 18c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm34 45c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm23-33c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM10 52c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm27.82-16.52c.788.788 2.068.788 2.856 0 .788-.788.788-2.068 0-2.856l-10.607-10.607c-.788-.788-2.068-.788-2.856 0-.788.788-.788 2.068 0 2.856l10.607 10.607zM68.71 81.29c.788.788 2.068.788 2.856 0 .788-.788.788-2.068 0-2.856l-10.607-10.607c-.788-.788-2.068-.788-2.856 0-.788.788-.788 2.068 0 2.856l10.607 10.607z' fill='%233b82f6' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+.hover-scale {
+transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+transform: scale(1.03);
+}
+.faq-item {
+transition: all 0.3s ease;
+}
+.scroll-smooth {
+scroll-behavior: smooth;
+}
+.glitch-effect {
+position: relative;
+}
+.glitch-effect::before {
+content: attr(data-text);
+position: absolute;
+left: 2px;
+text-shadow: -1px 0 #ff00ff;
+top: 0;
+color: #ff00ff;
+clip: rect(0, 900px, 0, 0);
+animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch-effect::after {
+content: attr(data-text);
+position: absolute;
+left: -2px;
+text-shadow: -1px 0 #00ffff;
+top: 0;
+color: #00ffff;
+clip: rect(0, 900px, 0, 0);
+animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim {
+0% { clip: rect(42px, 9999px, 44px, 0); }
+5% { clip: rect(24px, 9999px, 58px, 0); }
+10% { clip: rect(30px, 9999px, 63px, 0); }
+15% { clip: rect(67px, 9999px, 95px, 0); }
+20% { clip: rect(12px, 9999px, 87px, 0); }
+25% { clip: rect(10px, 9999px, 76px, 0); }
+30% { clip: rect(33px, 9999px, 87px, 0); }
+35% { clip: rect(57px, 9999px, 70px, 0); }
+40% { clip: rect(63px, 9999px, 84px, 0); }
+45% { clip: rect(37px, 9999px, 57px, 0); }
+50% { clip: rect(29px, 9999px, 50px, 0); }
+55% { clip: rect(49px, 9999px, 91px, 0); }
+60% { clip: rect(71px, 9999px, 90px, 0); }
+65% { clip: rect(17px, 9999px, 94px, 0); }
+70% { clip: rect(62px, 9999px, 97px, 0); }
+75% { clip: rect(56px, 9999px, 79px, 0); }
+80% { clip: rect(29px, 9999px, 77px, 0); }
+85% { clip: rect(31px, 9999px, 97px, 0); }
+90% { clip: rect(37px, 9999px, 86px, 0); }
+95% { clip: rect(46px, 9999px, 73px, 0); }
+100% { clip: rect(58px, 9999px, 62px, 0); }
+}
+@keyframes glitch-anim2 {
+0% { clip: rect(58px, 9999px, 62px, 0); }
+5% { clip: rect(46px, 9999px, 73px, 0); }
+10% { clip: rect(37px, 9999px, 86px, 0); }
+15% { clip: rect(31px, 9999px, 97px, 0); }
+20% { clip: rect(29px, 9999px, 77px, 0); }
+25% { clip: rect(56px, 9999px, 79px, 0); }
+30% { clip: rect(62px, 9999px, 97px, 0); }
+35% { clip: rect(17px, 9999px, 94px, 0); }
+40% { clip: rect(71px, 9999px, 90px, 0); }
+45% { clip: rect(49px, 9999px, 91px, 0); }
+50% { clip: rect(29px, 9999px, 50px, 0); }
+55% { clip: rect(37px, 9999px, 57px, 0); }
+60% { clip: rect(63px, 9999px, 84px, 0); }
+65% { clip: rect(57px, 9999px, 70px, 0); }
+70% { clip: rect(33px, 9999px, 87px, 0); }
+75% { clip: rect(10px, 9999px, 76px, 0); }
+80% { clip: rect(12px, 9999px, 87px, 0); }
+85% { clip: rect(67px, 9999px, 95px, 0); }
+90% { clip: rect(30px, 9999px, 63px, 0); }
+95% { clip: rect(24px, 9999px, 58px, 0); }
+100% { clip: rect(42px, 9999px, 44px, 0); }
+}
+.active-nav {
+position: relative;
+color: #2563eb;
+}
+.active-nav::after {
+content: '';
+position: absolute;
+bottom: -4px;
+left: 0;
+width: 100%;
+height: 2px;
+background: linear-gradient(90deg, #2563eb 0%, #4f46e5 100%);
+border-radius: 1px;
+}
+.code-block {
+background: #1e293b;
+border-radius: 0.75rem;
+padding: 1rem;
+font-family: 'JetBrains Mono', monospace;
+overflow-x: auto;
+border: 1px solid #334155;
+}
+.terminal-cursor {
+display: inline-block;
+width: 8px;
+height: 1.2em;
+background-color: #2563eb;
+animation: blink 1s infinite;
+}
+.countdown {
+display: flex;
+gap: 1rem;
+font-family: 'JetBrains Mono', monospace;
+}
+.countdown-item {
+background: #1e293b;
+border-radius: 0.5rem;
+padding: 1rem;
+min-width: 70px;
+text-align: center;
+border: 1px solid #334155;
+}
+.countdown-value {
+font-size: 2rem;
+font-weight: bold;
+color: #3b82f6;
+}
+.countdown-label {
+font-size: 0.8rem;
+color: #94a3b8;
+text-transform: uppercase;
+}
+.binary-rain {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: -1;
+opacity: 0.15;
+}
+.binary-column {
+position: absolute;
+top: -100px;
+font-family: 'JetBrains Mono', monospace;
+color: #2563eb;
+font-weight: bold;
+animation: rain linear infinite;
+}
+@keyframes rain {
+to {
+transform: translateY(100vh);
+}
+}
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800 scroll-smooth">
+<!-- Binary rain background effect -->
+<div class="binary-rain" id="binary-rain"></div>
+
+<!-- Header -->
+<header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center py-4">
+<div class="flex items-center">
+<div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl p-2 mr-3">
+<i class="fas fa-layer-group text-lg"></i>
+</div>
+<span class="text-xl font-bold gradient-text">Chaniathon</span>
+</div>
+<nav class="hidden md:block">
+<ul class="flex space-x-8">
+<li><a href="#overview" class="nav-link hover:text-blue-600 transition font-medium">Overview</a></li>
+<li><a href="#structure" class="nav-link hover:text-blue-600 transition font-medium">Structure</a></li>
+<li><a href="#judging" class="nav-link hover:text-blue-600 transition font-medium">Judging</a></li>
+<li><a href="#projects" class="nav-link hover:text-blue-600 transition font-medium">Projects</a></li>
+<li><a href="#awards" class="nav-link hover:text-blue-600 transition font-medium">Awards</a></li>
+<li><a href="#faq" class="nav-link hover:text-blue-600 transition font-medium">FAQ</a></li>
+</ul>
+</nav>
+<div class="hidden md:flex items-center space-x-4">
+<a href="#register" class="bg-white border-2 border-blue-600 text-blue-600 font-bold py-2 px-4 rounded-lg hover:bg-blue-50 transition text-sm hackathon-glow">
+Register Now
+</a>
+</div>
+<button class="md:hidden text-gray-700" id="mobile-menu-button">
+<i class="fas fa-bars text-xl"></i>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+<div class="px-4 py-4 space-y-4">
+<a href="#overview" class="block py-2 text-gray-700 nav-link hover:text-blue-600 transition">Overview</a>
+<a href="#structure" class="block py-2 text-gray-700 nav-link hover:text-blue-600 transition">Structure</a>
+<a href="#judging" class="block py-2 text-gray-700 nav-link hover:text-blue-600 transition">Judging</a>
+<a href="#projects" class="block py-2 text-gray-700 nav-link hover:text-blue-600 transition">Projects</a>
+<a href="#awards" class="block py-2 text-gray-700 nav-link hover:text-blue-600 transition">Awards</a>
+<a href="#faq" class="block py-2 text-gray-700 nav-link hover:text-blue-600 transition">FAQ</a>
+<a href="#register" class="block py-2 text-center bg-blue-600 text-white font-bold rounded-lg">
+Register Now
+</a>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center pt-20 relative overflow-hidden circuit-bg" id="home">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50 pointer-events-none"></div>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="max-w-4xl mx-auto text-center">
+<div class="animate-fade-in">
+<span class="inline-block px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">
+Electronics Hackathon @ HMU Chania
+</span>
+<h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+Build the Future with
+<span class="gradient-text neon-text glitch-effect" data-text="Smart Electronics">Smart Electronics</span>
+</h1>
+<p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+A two-phase hackathon fostering innovation in electronics, IoT, and embedded systems for Greek university students
+</p>
+
+<!-- Countdown Timer -->
+<div class="countdown mb-8 bg-white p-4 rounded-xl shadow-md max-w-md mx-auto">
+<div class="countdown-item">
+<div class="countdown-value" id="days">15</div>
+<div class="countdown-label">Days</div>
+</div>
+<div class="countdown-item">
+<div class="countdown-value" id="hours">23</div>
+<div class="countdown-label">Hours</div>
+</div>
+<div class="countdown-item">
+<div class="countdown-value" id="minutes">42</div>
+<div class="countdown-label">Minutes</div>
+</div>
+<div class="countdown-item">
+<div class="countdown-value" id="seconds">17</div>
+<div class="countdown-label">Seconds</div>
+</div>
+</div>
+
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="#register" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold py-4 px-8 rounded-xl text-lg hover:from-blue-700 hover:to-indigo-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl hackathon-glow">
+Register Your Team
+</a>
+<a href="#projects" class="bg-white border-2 border-blue-600 text-blue-600 font-bold py-4 px-8 rounded-xl text-lg hover:bg-blue-50 transition-all flex items-center justify-center hackathon-glow">
+View Project Ideas <i class="fas fa-arrow-right ml-2"></i>
+</a>
+</div>
+
+<!-- Terminal style notification -->
+<div class="mt-8 bg-gray-900 text-green-400 p-3 rounded-lg text-left font-mono text-sm max-w-md mx-auto">
+<div class="flex items-center mb-1">
+<span class="w-3 h-3 rounded-full bg-red-500 mr-2"></span>
+<span class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>
+<span class="w-3 h-3 rounded-full bg-green-500 mr-2"></span>
+<span>hackathon@chaniathon:~$</span>
+</div>
+<div class="ml-8">15 teams registered so far... <span class="terminal-cursor"></span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Overview Section -->
+<section class="py-20 bg-gray-50" id="overview">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Event Overview</h2>
+<p class="text-xl text-gray-600">Everything you need to know about Chaniathon</p>
+<div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-700 mx-auto rounded-full mt-4"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="flex items-center mb-6">
+<div class="bg-blue-100 p-3 rounded-xl mr-4">
+<i class="fas fa-map-marker-alt text-blue-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Hosted at HMU Chania</h3>
+</div>
+<p class="text-gray-600 leading-relaxed mb-6">
+Department of Electronic Engineering, HMU Chania
+</p>
+<div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
+<p class="text-blue-800 font-medium">
+<span class="font-bold">3-5 students</span> per team with assigned roles
+</p>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="flex items-center mb-6">
+<div class="bg-indigo-100 p-3 rounded-xl mr-4">
+<i class="fas fa-users text-indigo-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Who Can Participate</h3>
+</div>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+<span class="text-gray-700">Open to all Greek university students</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+<span class="text-gray-700">No prior experience required</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+<span class="text-gray-700">Interdisciplinary teams encouraged</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+<span class="text-gray-700">Bring your creativity and passion</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-12 bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hackathon-glow">
+<h3 class="text-2xl font-bold text-gray-800 mb-6">Our Mission</h3>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="text-center p-4 hover:bg-blue-50 rounded-lg transition-colors">
+<div class="flex justify-center mb-4 text-blue-500">
+<i class="fas fa-lightbulb fa-2x"></i>
+</div>
+<h4 class="font-bold text-gray-800 mb-2">Foster Creativity</h4>
+<p class="text-gray-600 text-sm">Encourage innovative thinking and problem-solving</p>
+</div>
+<div class="text-center p-4 hover:bg-indigo-50 rounded-lg transition-colors">
+<div class="flex justify-center mb-4 text-indigo-500">
+<i class="fas fa-bolt fa-2x"></i>
+</div>
+<h4 class="font-bold text-gray-800 mb-2">Hands-on Experience</h4>
+<p class="text-gray-600 text-sm">Provide practical skills in electronics and IoT</p>
+</div>
+<div class="text-center p-4 hover:bg-purple-50 rounded-lg transition-colors">
+<div class="flex justify-center mb-4 text-purple-500">
+<i class="fas fa-trophy fa-2x"></i>
+</div>
+<h4 class="font-bold text-gray-800 mb-2">Support Epictetus</h4>
+<p class="text-gray-600 text-sm">Fundraiser for the Epictetus HMU team</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Structure Section -->
+<section class="py-20" id="structure">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Hackathon Structure</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">A two-phase approach ensuring inclusivity and practical results</p>
+<div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-700 mx-auto rounded-full mt-4"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+<!-- Phase 1 -->
+<div class="hover-scale">
+<div class="bg-white p-8 rounded-xl shadow-md border-l-4 border-blue-500 hover:shadow-xl transition-all hackathon-glow">
+<div class="flex items-center mb-6">
+<div class="bg-blue-100 text-blue-800 font-bold text-2xl w-12 h-12 rounded-xl flex items-center justify-center mr-4">
+1
+</div>
+<h3 class="text-2xl font-bold text-gray-800">Virtual Prototyping</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="bg-blue-100 p-2 rounded-lg mr-3 mt-1">
+<i class="fas fa-code text-blue-600"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Tools</h4>
+<p class="text-gray-600">Wokwi (Arduino/ESP32 simulation)</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="bg-blue-100 p-2 rounded-lg mr-3 mt-1">
+<i class="fas fa-book text-blue-600"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Deliverables</h4>
+<p class="text-gray-600">Working simulation, presentation slides, short video demo</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="bg-blue-100 p-2 rounded-lg mr-3 mt-1">
+<i class="fas fa-users text-blue-600"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Participation</h4>
+<p class="text-gray-600">All registered teams participate</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="bg-blue-100 p-2 rounded-lg mr-3 mt-1">
+<i class="fas fa-clock text-blue-600"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Timeline</h4>
+<p class="text-gray-600">2 weeks for development and submission</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-100">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+Foundation Phase
+</span>
+</div>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="hover-scale">
+<div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-xl shadow-md border-l-4 border-indigo-500 hover:shadow-xl transition-all hackathon-glow">
+<div class="flex items-center mb-6">
+<div class="bg-indigo-100 text-indigo-800 font-bold text-2xl w-12 h-12 rounded-xl flex items-center justify-center mr-4">
+2
+</div>
+<h3 class="text-2xl font-bold text-gray-800">Hardware Prototyping</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="bg-indigo-100 p-2 rounded-lg mr-3 mt-1">
+<i class="fas fa-trophy text-indigo-600"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Advancement</h4>
+<p class="text-gray-600">Top-scoring teams from Phase 1 advance</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="bg-indigo-100 p-2 rounded-lg mr-3 mt-1">
+<i class="fas fa-microchip text-indigo-600"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Resources</h4>
+<p class="text-gray-600">HMU labs and provided electronics kits</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="bg-indigo-100 p-2 rounded-lg mr-3 mt-1">
+<i class="fas fa-wifi text-indigo-600"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Focus</h4>
+<p class="text-gray-600">Building physical prototypes with real components</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="bg-indigo-100 p-2 rounded-lg mr-3 mt-1">
+<i class="fas fa-clock text-indigo-600"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Timeline</h4>
+<p class="text-gray-600">Intensive 3-day build period at HMU</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-indigo-100">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
+Advanced Phase
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline -->
+<div class="mt-20 max-w-4xl mx-auto">
+<h3 class="text-2xl font-bold text-center text-gray-800 mb-12">Event Timeline</h3>
+<div class="relative">
+<div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+<div class="relative flex items-start mb-8 ml-4">
+<div class="absolute left-0 w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+<span class="text-blue-600 font-bold text-sm">May 1</span>
+</div>
+<div class="ml-24 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1 hackathon-glow">
+<h4 class="font-bold text-lg text-gray-800 mb-2">Registration Opens</h4>
+<p class="text-gray-600">Form your team and register on our website</p>
+</div>
+</div>
+<div class="relative flex items-start mb-8 ml-4">
+<div class="absolute left-0 w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+<span class="text-blue-600 font-bold text-sm">May 15</span>
+</div>
+<div class="ml-24 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1 hackathon-glow">
+<h4 class="font-bold text-lg text-gray-800 mb-2">Phase 1 Begins</h4>
+<p class="text-gray-600">Virtual prototyping with Wokwi starts</p>
+</div>
+</div>
+<div class="relative flex items-start mb-8 ml-4">
+<div class="absolute left-0 w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+<span class="text-blue-600 font-bold text-sm">June 1</span>
+</div>
+<div class="ml-24 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1 hackathon-glow">
+<h4 class="font-bold text-lg text-gray-800 mb-2">Phase 1 Submissions</h4>
+<p class="text-gray-600">Submit your virtual prototype and presentation</p>
+</div>
+</div>
+<div class="relative flex items-start mb-8 ml-4">
+<div class="absolute left-0 w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+<span class="text-blue-600 font-bold text-sm">June 10</span>
+</div>
+<div class="ml-24 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1 hackathon-glow">
+<h4 class="font-bold text-lg text-gray-800 mb-2">Phase 2 Selection</h4>
+<p class="text-gray-600">Top teams announced for hardware prototyping</p>
+</div>
+</div>
+<div class="relative flex items-start mb-8 ml-4">
+<div class="absolute left-0 w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+<span class="text-blue-600 font-bold text-sm">June 20-22</span>
+</div>
+<div class="ml-24 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1 hackathon-glow">
+<h4 class="font-bold text-lg text-gray-800 mb-2">Hardware Build Days</h4>
+<p class="text-gray-600">3-day intensive build period at HMU labs</p>
+</div>
+</div>
+<div class="relative flex items-start mb-8 ml-4">
+<div class="absolute left-0 w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+<span class="text-blue-600 font-bold text-sm">June 23</span>
+</div>
+<div class="ml-24 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1 hackathon-glow">
+<h4 class="font-bold text-lg text-gray-800 mb-2">Final Presentations</h4>
+<p class="text-gray-600">Demo your working prototype to judges</p>
+</div>
+</div>
+<div class="relative flex items-start mb-8 ml-4">
+<div class="absolute left-0 w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
+<span class="text-blue-600 font-bold text-sm">June 24</span>
+</div>
+<div class="ml-24 bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1 hackathon-glow">
+<h4 class="font-bold text-lg text-gray-800 mb-2">Awards Ceremony</h4>
+<p class="text-gray-600">Celebrate the winners and all participants</p>
+</div>
+</div>
+</div>
+
+<!-- Code snippet example -->
+<div class="mt-12 code-block">
+<div class="flex items-center mb-2">
+<span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+<span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+<span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+<span class="text-gray-400 text-xs">app.ino</span>
+</div>
+<pre><code class="text-green-400">void <span class="text-blue-300">setup</span>() {
+<span class="text-purple-300">Serial</span>.<span class="text-yellow-300">begin</span>(9600);
+<span class="text-gray-500">// Initialize sensors and components</span>
+<span class="text-purple-300">pinMode</span>(LED_BUILTIN, OUTPUT);
+}
+
+void <span class="text-blue-300">loop</span>() {
+<span class="text-gray-500">// Read sensor data</span>
+int sensorValue = <span class="text-purple-300">analogRead</span>(A0);
+
+<span class="text-gray-500">// Process data and control outputs</span>
+<span class="text-purple-300">if</span> (sensorValue > 500) {
+<span class="text-purple-300">digitalWrite</span>(LED_BUILTIN, HIGH);
+} <span class="text-purple-300">else</span> {
+<span class="text-purple-300">digitalWrite</span>(LED_BUILTIN, LOW);
+}
+
+<span class="text-purple-300">delay</span>(100);
+}</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Judging Section -->
+<section class="py-20 bg-gray-50" id="judging">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Judging Criteria</h2>
+<p class="text-xl text-gray-600">100 points total across five key dimensions</p>
+<div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-700 mx-auto rounded-full mt-4"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+<div class="rounded-xl p-6 shadow-md bg-white border-l-4 border-blue-500 hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold text-gray-800">Functionality</h3>
+<span class="font-bold text-blue-600 text-2xl">30</span>
+</div>
+<p class="text-gray-600 mb-4">Does the project actually work? Reliability, stability, and completeness of implementation.</p>
+<div class="w-full bg-gray-200 rounded-full h-3">
+<div class="h-3 rounded-full bg-blue-500" style="width: 30%; transition: width 1s;"></div>
+</div>
+<div class="mt-2 text-right">
+<span class="text-sm text-gray-500">out of 100 total points</span>
+</div>
+</div>
+<div class="rounded-xl p-6 shadow-md bg-white border-l-4 border-indigo-500 hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold text-gray-800">Innovation</h3>
+<span class="font-bold text-indigo-600 text-2xl">20</span>
+</div>
+<p class="text-gray-600 mb-4">Originality, creativity, and potential impact. Does it solve a real problem in a novel way?</p>
+<div class="w-full bg-gray-200 rounded-full h-3">
+<div class="h-3 rounded-full bg-indigo-500" style="width: 20%; transition: width 1s;"></div>
+</div>
+<div class="mt-2 text-right">
+<span class="text-sm text-gray-500">out of 100 total points</span>
+</div>
+</div>
+<div class="rounded-xl p-6 shadow-md bg-white border-l-4 border-purple-500 hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold text-gray-800">Complexity</h3>
+<span class="font-bold text-purple-600 text-2xl">15</span>
+</div>
+<p class="text-gray-600 mb-4">Technical depth and sophistication. Did the team go beyond basic implementations?</p>
+<div class="w-full bg-gray-200 rounded-full h-3">
+<div class="h-3 rounded-full bg-purple-500" style="width: 15%; transition: width 1s;"></div>
+</div>
+<div class="mt-2 text-right">
+<span class="text-sm text-gray-500">out of 100 total points</span>
+</div>
+</div>
+<div class="rounded-xl p-6 shadow-md bg-white border-l-4 border-teal-500 hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold text-gray-800">Presentation</h3>
+<span class="font-bold text-teal-600 text-2xl">15</span>
+</div>
+<p class="text-gray-600 mb-4">Clarity of explanation, demo quality, and visual appeal of slides and documentation.</p>
+<div class="w-full bg-gray-200 rounded-full h-3">
+<div class="h-3 rounded-full bg-teal-500" style="width: 15%; transition: width 1s;"></div>
+</div>
+<div class="mt-2 text-right">
+<span class="text-sm text-gray-500">out of 100 total points</span>
+</div>
+</div>
+<div class="rounded-xl p-6 shadow-md bg-white border-l-4 border-emerald-500 md:col-span-2 hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold text-gray-800">Hardware Implementation</h3>
+<span class="font-bold text-emerald-600 text-2xl">20</span>
+</div>
+<p class="text-gray-600 mb-4">Quality of physical build, component integration, and overall craftsmanship.</p>
+<div class="w-full bg-gray-200 rounded-full h-3">
+<div class="h-3 rounded-full bg-emerald-500" style="width: 20%; transition: width 1s;"></div>
+</div>
+<div class="mt-2 text-right">
+<span class="text-sm text-gray-500">out of 100 total points</span>
+</div>
+</div>
+</div>
+<div class="mt-16 max-w-4xl mx-auto">
+<div class="bg-white p-8 rounded-xl shadow-md hackathon-glow">
+<div class="flex items-center mb-6">
+<div class="bg-yellow-100 p-3 rounded-xl mr-4">
+<i class="fas fa-bullseye text-yellow-600"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-800">Judging Panel</h3>
+</div>
+<p class="text-gray-600 mb-6">
+Our judging panel consists of experienced professionals from academia and industry, including faculty members from HMU's Department of Electronic Engineering and industry experts in IoT and embedded systems.
+</p>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">MP</div>
+<p class="font-medium text-gray-800">Dr. Maria Papadaki - Associate Professor, HMU</p>
+</div>
+<div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-indigo-50 transition-colors">
+<div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">DK</div>
+<p class="font-medium text-gray-800">Prof. Dimitris Kourkoulis - Industry Consultant</p>
+</div>
+<div class="text-center p-4 bg-gray-50 rounded-lg hover:bg-purple-50 transition-colors">
+<div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">ET</div>
+<p class="font-medium text-gray-800">Engineer Eleni Tsolaki - IoT Specialist</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-20" id="projects">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Project Ideas</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Get inspired by these innovative concepts or create your own!</p>
+<div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-700 mx-auto rounded-full mt-4"></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+<div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="mb-4 text-green-500">
+<i class="fas fa-seedling fa-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Smart Plant Pot</h3>
+<p class="text-gray-600 mb-4">Monitor soil moisture, temperature, and light levels. Automate watering systems based on plant needs.</p>
+<div class="flex items-center text-sm text-blue-600 font-medium">
+<i class="fas fa-project-diagram mr-2"></i>
+Sensors, IoT, Automation
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="mb-4 text-amber-400">
+<i class="fas fa-sun fa-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">IoT Weather Station</h3>
+<p class="text-gray-600 mb-4">Collect real-time weather data and display it on a web dashboard. Include rainfall, wind speed, and UV index.</p>
+<div class="flex items-center text-sm text-blue-600 font-medium">
+<i class="fas fa-project-diagram mr-2"></i>
+Multiple Sensors, Cloud Integration
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="mb-4 text-blue-500">
+<i class="fas fa-parking fa-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Smart Parking Indicator</h3>
+<p class="text-gray-600 mb-4">Detect available parking spots using ultrasonic sensors. Display real-time availability on a mobile app.</p>
+<div class="flex items-center text-sm text-blue-600 font-medium">
+<i class="fas fa-project-diagram mr-2"></i>
+Ultrasonic Sensors, Mobile App
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="mb-4 text-amber-500">
+<i class="fas fa-battery-charging fa-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Portable Solar Charger</h3>
+<p class="text-gray-600 mb-4">Harness solar energy efficiently. Include battery management and multiple device charging capabilities.</p>
+<div class="flex items-center text-sm text-blue-600 font-medium">
+<i class="fas fa-project-diagram mr-2"></i>
+Solar Panels, Power Management
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="mb-4 text-purple-500">
+<i class="fas fa-mobile-alt fa-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Digital Queue System</h3>
+<p class="text-gray-600 mb-4">Manage patient queues in clinics with real-time updates and SMS notifications to reduce waiting times.</p>
+<div class="flex items-center text-sm text-blue-600 font-medium">
+<i class="fas fa-project-diagram mr-2"></i>
+Display Systems, Notification API
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="mb-4 text-indigo-500">
+<i class="fas fa-fingerprint fa-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">RFID Attendance System</h3>
+<p class="text-gray-600 mb-4">Track attendance automatically using RFID cards. Sync data to cloud with analytics dashboard.</p>
+<div class="flex items-center text-sm text-blue-600 font-medium">
+<i class="fas fa-project-diagram mr-2"></i>
+RFID, Cloud Database
+</div>
+</div>
+</div>
+<div class="mt-16 max-w-3xl mx-auto text-center">
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hackathon-glow">
+<h3 class="text-2xl font-bold text-gray-800 mb-4">Bring Your Own Idea!</h3>
+<p class="text-gray-600 mb-6">
+These are just suggestions! We encourage teams to develop their own innovative projects that solve real-world problems using electronics and IoT technologies.
+</p>
+<button class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-indigo-800 transition transform hover:scale-105">
+Submit Your Project Idea
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Awards Section -->
+<section class="py-20 bg-gray-50" id="awards">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Recognition & Prizes</h2>
+<p class="text-xl text-gray-600">Celebrating excellence in innovation and execution</p>
+<div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-700 mx-auto rounded-full mt-4"></div>
+</div>
+<div class="space-y-8 max-w-3xl mx-auto">
+<div class="bg-white p-8 rounded-xl shadow-md flex flex-col md:flex-row items-start hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="md:mr-6 md:mb-0 mb-4 flex-shrink-0 text-yellow-500">
+<i class="fas fa-trophy fa-3x"></i>
+</div>
+<div class="flex-1">
+<h3 class="text-2xl font-bold text-gray-800 mb-3">Best Hardware Prototype</h3>
+<p class="text-gray-600 mb-4">Awarded for the most impressive physical implementation, craftsmanship, and technical excellence in building the actual device.</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded-r-lg">
+<p class="text-blue-800 font-medium">Premium Electronics Kit + Certificate</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-md flex flex-col md:flex-row items-start hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="md:mr-6 md:mb-0 mb-4 flex-shrink-0 text-blue-500">
+<i class="fas fa-trophy fa-3x"></i>
+</div>
+<div class="flex-1">
+<h3 class="text-2xl font-bold text-gray-800 mb-3">Most Innovative Idea</h3>
+<p class="text-gray-600 mb-4">Recognizes the most original, creative, and impactful concept that demonstrates exceptional problem-solving and forward thinking.</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded-r-lg">
+<p class="text-blue-800 font-medium">Innovation Development Package + Certificate</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-md flex flex-col md:flex-row items-start hover:shadow-xl transition-all hover-scale hackathon-glow">
+<div class="md:mr-6 md:mb-0 mb-4 flex-shrink-0 text-purple-500">
+<i class="fas fa-trophy fa-3x"></i>
+</div>
+<div class="flex-1">
+<h3 class="text-2xl font-bold text-gray-800 mb-3">Audience Choice</h3>
+<p class="text-gray-600 mb-4">Selected by participants and attendees for being the most engaging, exciting, and crowd-favorite project of the event.</p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded-r-lg">
+<p class="text-blue-800 font-medium">Popular Choice Award + Certificate</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center max-w-2xl mx-auto">
+<div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-2xl border border-blue-500 hackathon-glow">
+<h3 class="text-2xl font-bold mb-4">All Participants Receive</h3>
+<div class="grid md:grid-cols-3 gap-6 mt-6">
+<div class="flex flex-col items-center p-4 hover:bg-blue-700 rounded-lg transition-colors">
+<i class="fas fa-trophy text-yellow-300 mb-3 fa-2x"></i>
+<span class="font-medium">Certificate of Participation</span>
+</div>
+<div class="flex flex-col items-center p-4 hover:bg-indigo-700 rounded-lg transition-colors">
+<i class="fas fa-microchip text-green-300 mb-3 fa-2x"></i>
+<span class="font-medium">Valuable Experience</span>
+</div>
+<div class="flex flex-col items-center p-4 hover:bg-purple-700 rounded-lg transition-colors">
+<i class="fas fa-users text-purple-300 mb-3 fa-2x"></i>
+<span class="font-medium">Networking Opportunities</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20" id="faq">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+<p class="text-xl text-gray-600">Everything you need to know about participating</p>
+<div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-700 mx-auto rounded-full mt-4"></div>
+</div>
+<div class="space-y-4 max-w-3xl mx-auto">
+<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<span class="font-medium text-gray-800">Who can participate in Chaniathon?</span>
+<i class="fas fa-chevron-down text-gray-500"></i>
+</button>
+<div class="p-6 bg-white">
+<p class="text-gray-600 leading-relaxed">Chaniathon is open to all undergraduate and graduate students currently enrolled in Greek universities. Students from any discipline are welcome, though backgrounds in engineering, computer science, or related fields are beneficial. Teams must consist of 3-5 members.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<span class="font-medium text-gray-800">Do I need prior experience with electronics?</span>
+<i class="fas fa-chevron-down text-gray-500"></i>
+</button>
+<div class="p-6 bg-white">
+<p class="text-gray-600 leading-relaxed">No prior experience is required! Chaniathon is designed to be accessible to students of all skill levels. We provide resources, tutorials, and mentorship to help teams succeed. What's most important is your enthusiasm, creativity, and willingness to learn.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<span class="font-medium text-gray-800">What tools will we use for the virtual phase?</span>
+<i class="fas fa-chevron-down text-gray-500"></i>
+</button>
+<div class="p-6 bg-white">
+<p class="text-gray-600 leading-relaxed">For Phase 1 (Virtual Prototyping), teams will use Wokwi, a browser-based simulator for Arduino, ESP32, and other microcontrollers. Wokwi allows you to build circuits and write code without any physical hardware. It's completely free to use and requires only a web browser.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<span class="font-medium text-gray-800">What happens in the hardware phase?</span>
+<i class="fas fa-chevron-down text-gray-500"></i>
+</button>
+<div class="p-6 bg-white">
+<p class="text-gray-600 leading-relaxed">The top-scoring teams from Phase 1 will advance to Phase 2 (Hardware Prototyping). These teams will receive electronics kits and access to HMU's laboratories to build physical versions of their projects. Mentors will be available to assist with hardware implementation and troubleshooting.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<span class="font-medium text-gray-800">What resources will be provided?</span>
+<i class="fas fa-chevron-down text-gray-500"></i>
+</button>
+<div class="p-6 bg-white">
+<p class="text-gray-600 leading-relaxed">All teams will have access to online documentation, tutorials, and mentorship. Advancing teams in Phase 2 will receive electronics kits containing components needed for their projects, as well as access to HMU's laboratories with tools and equipment. Basic components like resistors, LEDs, sensors, and microcontrollers will be provided.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<span class="font-medium text-gray-800">How are teams judged?</span>
+<i class="fas fa-chevron-down text-gray-500"></i>
+</button>
+<div class="p-6 bg-white">
+<p class="text-gray-600 leading-relaxed">Projects are evaluated on a 100-point scale across five categories: Functionality (30 points), Innovation (20 points), Complexity (15 points), Presentation (15 points), and Hardware Implementation (20 points). Judges are looking for working prototypes that solve real problems in creative ways with clean implementation and clear communication.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<span class="font-medium text-gray-800">Can I participate if I can't attend in person?</span>
+<i class="fas fa-chevron-down text-gray-500"></i>
+</button>
+<div class="p-6 bg-white">
+<p class="text-gray-600 leading-relaxed">Phase 1 (Virtual Prototyping) can be completed entirely online. However, Phase 2 (Hardware Prototyping) requires physical presence at HMU Chania to build and test your hardware. If you cannot attend in person, you can still participate in Phase 1 and gain valuable experience, but you won't be able to advance to the hardware phase.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden faq-item hackathon-glow">
+<button class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center">
+<span class="font-medium text-gray-800">How do I form a team?</span>
+<i class="fas fa-chevron-down text-gray-500"></i>
+</button>
+<div class="p-6 bg-white">
+<p class="text-gray-600 leading-relaxed">You can form a team with classmates or friends, or use our team-matching system when you register. We encourage interdisciplinary teams with diverse skills (hardware, coding, design, documentation). Each team must have 3-5 members, and all members must register individually while indicating their team affiliation.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Registration Section -->
+<section class="py-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white" id="register">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Build the Future?</h2>
+<p class="text-xl mb-10 opacity-90">Join Chaniathon and turn your ideas into reality</p>
+<div class="bg-white p-8 rounded-2xl mb-10 hackathon-glow">
+<div class="grid md:grid-cols-2 gap-8">
+<div class="text-left text-gray-800">
+<h3 class="text-2xl font-bold mb-4">Registration Details</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<i class="fas fa-calendar-alt text-blue-500 mt-1 mr-3"></i>
+<div>
+<h4 class="font-bold">Registration Deadline</h4>
+<p>May 31, 2024</p>
+</div>
+</div>
+<div class="flex items-start">
+<i class="fas fa-users text-blue-500 mt-1 mr-3"></i>
+<div>
+<h4 class="font-bold">Team Size</h4>
+<p>3-5 members per team</p>
+</div>
+</div>
+<div class="flex items-start">
+<i class="fas fa-shield-alt text-blue-500 mt-1 mr-3"></i>
+<div>
+<h4 class="font-bold">Eligibility</h4>
+<p>All Greek university students</p>
+</div>
+</div>
+<div class="flex items-start">
+<i class="fas fa-bolt text-blue-500 mt-1 mr-3"></i>
+<div>
+<h4 class="font-bold">No Experience Needed</h4>
+<p>Beginners welcome with mentorship provided</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-left text-gray-800">
+<h3 class="text-2xl font-bold mb-4">Get Started Today</h3>
+<form class="space-y-4">
+<div>
+<label class="block font-medium mb-2">Full Name</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your full name" required>
+</div>
+<div>
+<label class="block font-medium mb-2">Email Address</label>
+<input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your university email" required>
+</div>
+<div>
+<label class="block font-medium mb-2">University</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your university name" required>
+</div>
+<div>
+<label class="block font-medium mb-2">Team Name (optional)</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your team name">
+</div>
+<button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-indigo-800 transition transform hover:scale-105">
+Register Interest
+</button>
+<p class="text-sm text-gray-500 text-center">
+We'll send you registration details and updates
+</p>
+</form>
+</div>
+</div>
+</div>
+<div class="text-sm opacity-80">
+<p>Questions? Contact us at <a href="mailto:info@chaniathon.gr" class="underline hover:text-blue-200">info@chaniathon.gr</a></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-2">
+<div class="flex items-center mb-4">
+<div class="bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-xl p-2 mr-3">
+<i class="fas fa-layer-group"></i>
+</div>
+<span class="text-xl font-bold">Chaniathon</span>
+</div>
+<p class="text-gray-400 mb-4">
+A two-phase electronics hackathon fostering innovation, creativity, and hands-on experience in IoT and embedded systems for Greek university students.
+</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition hover:scale-110">
+<i class="fab fa-twitter"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition hover:scale-110">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition hover:scale-110">
+<i class="fab fa-github"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition hover:scale-110">
+<i class="fab fa-linkedin-in"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#overview" class="text-gray-400 hover:text-white transition nav-link">Overview</a></li>
+<li><a href="#structure" class="text-gray-400 hover:text-white transition nav-link">Structure</a></li>
+<li><a href="#judging" class="text-gray-400 hover:text-white transition nav-link">Judging</a></li>
+<li><a href="#projects" class="text-gray-400 hover:text-white transition nav-link">Projects</a></li>
+<li><a href="#awards" class="text-gray-400 hover:text-white transition nav-link">Awards</a></li>
+<li><a href="#faq" class="text-gray-400 hover:text-white transition nav-link">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4">Contact</h3>
+<div class="space-y-2 text-gray-400">
+<div class="flex items-center">
+<i class="fas fa-envelope mr-2"></i>
+<span>info@chaniathon.gr</span>
+</div>
+<div class="flex items-center">
+<i class="fas fa-phone mr-2"></i>
+<span>+30 28210 XXXXXX</span>
+</div>
+<div class="mt-4">
+<p>Department of Electronic Engineering</p>
+<p>HMU Chania, Greece</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-gray-800">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm">
+© 2024 Chaniathon Electronics Hackathon. All rights reserved.
+</p>
+<div class="flex items-center mt-4 md:mt-0">
+<span class="text-gray-500 text-sm mr-2">Powered by</span>
+<span class="font-bold">Epictetus HMU, Lab of Experimental Ideas</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Back to Top Button -->
+<div class="fixed bottom-8 right-8 z-50">
+<a href="#home" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-3 rounded-full shadow-lg hover:from-blue-700 hover:to-indigo-800 transition transform hover:scale-110 hackathon-glow">
+<i class="fas fa-arrow-up"></i>
+</a>
+</div>
+
+<!-- JavaScript for mobile menu toggle and smooth scrolling -->
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+const menu = document.getElementById('mobile-menu');
+menu.classList.toggle('hidden');
+});
+
+// Smooth scrolling for all navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+
+// Close mobile menu if open
+document.getElementById('mobile-menu').classList.add('hidden');
+
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+
+// Update active nav link
+document.querySelectorAll('.nav-link').forEach(link => {
+link.classList.remove('active-nav');
+});
+this.classList.add('active-nav');
+}
+});
+});
+
+// Update active nav link based on scroll position
+window.addEventListener('scroll', () => {
+const scrollPosition = window.scrollY;
+const sections = document.querySelectorAll('section');
+
+sections.forEach(section => {
+const sectionTop = section.offsetTop - 100;
+const sectionHeight = section.offsetHeight;
+const sectionId = section.getAttribute('id');
+const navLink = document.querySelector(`a[href="#${sectionId}"]`);
+
+if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+document.querySelectorAll('.nav-link').forEach(link => {
+link.classList.remove('active-nav');
+});
+if (navLink) {
+navLink.classList.add('active-nav');
+}
+}
+});
+});
+
+// Countdown timer
+function updateCountdown() {
+const eventDate = new Date('June 1, 2024 00:00:00').getTime();
+const now = new Date().getTime();
+const distance = eventDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById('days').textContent = days.toString().padStart(2, '0');
+document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
+
+// Initialize countdown
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// FAQ accordion
+document.querySelectorAll('.faq-item button').forEach(button => {
+button.addEventListener('click', () => {
+const faqItem = button.closest('.faq-item');
+faqItem.classList.toggle('active');
+
+const icon = button.querySelector('i');
+if (faqItem.classList.contains('active')) {
+icon.classList.remove('fa-chevron-down');
+icon.classList.add('fa-chevron-up');
+} else {
+icon.classList.remove('fa-chevron-up');
+icon.classList.add('fa-chevron-down');
+}
+});
+});
+
+// Binary rain effect
+function createBinaryRain() {
+const binaryRain = document.getElementById('binary-rain');
+const columnCount = Math.floor(window.innerWidth / 20);
+
+for (let i = 0; i < columnCount; i++) {
+const column = document.createElement('div');
+column.className = 'binary-column';
+column.style.left = `${i * 20}px`;
+column.style.animationDuration = `${5 + Math.random() * 10}s`;
+
+let binaryText = '';
+const columnLength = 10 + Math.floor(Math.random() * 20);
+
+for (let j = 0; j < columnLength; j++) {
+binaryText += Math.random() > 0.5 ? '1' : '0';
+binaryText += ' ';
+}
+
+column.textContent = binaryText;
+binaryRain.appendChild(column);
+}
+}
+
+// Initialize binary rain
+createBinaryRain();
+
+// FAQ accordion improvements
+document.querySelectorAll('.faq-item').forEach(item => {
+const button = item.querySelector('button');
+button.addEventListener('click', () => {
+const isActive = item.classList.contains('active');
+
+// Close all items first
+document.querySelectorAll('.faq-item').forEach(i => {
+i.classList.remove('active');
+const icon = i.querySelector('i');
+icon.classList.remove('fa-chevron-up');
+icon.classList.add('fa-chevron-down');
+});
+
+// Open clicked item if it wasn't active
+if (!isActive) {
+item.classList.add('active');
+const icon = button.querySelector('i');
+icon.classList.remove('fa-chevron-down');
+icon.classList.add('fa-chevron-up');
+}
+});
+});
+</script></body>
+</html>
